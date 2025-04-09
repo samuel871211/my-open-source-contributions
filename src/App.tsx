@@ -1,6 +1,6 @@
 import styles from './App.module.css';
-import { Link, Chip, SxProps } from '@mui/material';
-import { DataGrid, GridColDef, getGridStringOperators } from '@mui/x-data-grid';
+import { Table, Tag } from "antd";
+import type { TableProps, TagProps } from "antd";
 
 type Repo = 
   "SWR" |
@@ -11,35 +11,34 @@ type Repo =
   "modelcontextprotocol/docs" |
   "modelcontextprotocol/inspector" |
   "AzureDevOps-MCP" | 
-  "cline";
+  "cline" |
+  "dify" |
+  "liam" |
+  "typebot";
 
 type TagTypes = 
-  "React" |
-  "NodeJS" |
-  "AI" |
-  "documentation" |
+  "doc" |
   "test" |
-  "feature" |
-  "performance" |
-  "typeImprovement" |
+  "feat" |
+  "perf" |
+  "refactor" |
   "typo" |
-  "UIUX" |
-  "package.json";
+  "style" |
+  "chore" |
+  "fix";
 
-// todo-yusheng
-// const TagColorMapping: { [key in TagTypes]: ChipTypeMap['props']['color'] } = {
-//   "React": "default",
-//   "NodeJS": "default",
-//   "AI": "default",
-//   "documentation": "default",
-//   "test": "default",
-//   "feature": "default",
-//   "performance": "default",
-//   "typeImprovement": "default",
-//   "typo": "default",
-//   "UIUX": "default",
-//   "package.json": "default"
-// }
+const TagColorMapping: { [key in TagTypes]: TagProps['color'] } = {
+  "doc": "blue",
+  "test": "orange",
+  "feat": "geekblue",
+  "perf": "gold",
+  "refactor": "lime",
+  "typo": "cyan",
+  "style": "purple",
+  "chore": "pink",
+  "fix": "red"
+};
+const TagList = Object.keys(TagColorMapping) as TagTypes[];
 
 type Row = {
   id: number;
@@ -49,220 +48,355 @@ type Row = {
   createDate: Date;
 };
 
-const rows: Array<Row> = [
+const dataSource: TableProps<Row>['dataSource'] = [
   {
     id: 0,
     url: "https://github.com/vercel/swr/pull/4075",
     repo: "SWR",
-    tags: ["React", "typeImprovement"],
+    tags: ["refactor"],
     createDate: new Date('2025-01-26')
   },
   {
     id: 0,
     url: "https://github.com/TanStack/query/pull/8669",
     repo: "TanStack Query",
-    tags: ["React", "typeImprovement"],
+    tags: ["refactor"],
     createDate: new Date('2025-02-19')
   },
   {
     id: 0,
     url: "https://github.com/e2b-dev/E2B/pull/620",
     repo: "E2B",
-    tags: ["AI", "typo"],
+    tags: ["typo"],
     createDate: new Date('2025-03-20')
   },
   {
     id: 0,
     url: "https://github.com/e2b-dev/E2B/pull/630",
     repo: "E2B",
-    tags: ["AI", "typo"],
+    tags: ["typo"],
     createDate: new Date('2025-03-22')
   },
   {
     id: 0,
     url: "https://github.com/e2b-dev/E2B/pull/633",
     repo: "E2B",
-    tags: ["AI", "package.json"],
+    tags: ["chore"],
     createDate: new Date('2025-03-23')
   },
   {
     id: 0,
     url: "https://github.com/e2b-dev/dashboard/pull/16",
     repo: "E2B/dashboard",
-    tags: ["AI", "typo"],
+    tags: ["typo"],
     createDate: new Date('2025-03-25')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/55",
     repo: "E2B/dashboard",
-    tags: ["AI", "typeImprovement"],
+    tags: ["refactor"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/56",
     repo: "E2B/dashboard",
-    tags: ["AI", "documentation"],
+    tags: ["doc"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/57",
     repo: "E2B/dashboard",
-    tags: ["AI", "documentation"],
+    tags: ["doc"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/64",
     repo: "E2B/dashboard",
-    tags: ["React", "AI", "typeImprovement", "performance"],
+    tags: ["refactor", "perf"],
     createDate: new Date('2025-03-24')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/65",
     repo: "E2B/dashboard",
-    tags: ["React", "AI", "feature", "UIUX"],
+    tags: ["feat", "style"],
     createDate: new Date('2025-03-24')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/73",
     repo: "E2B/dashboard",
-    tags: ["React", "AI", "UIUX"],
+    tags: ["style"],
     createDate: new Date('2025-03-28')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/77",
     repo: "E2B/dashboard",
-    tags: ["React", "AI", "UIUX"],
+    tags: ["style"],
     createDate: new Date('2025-03-30')
   },
   {
     id: 0,
     url: "https://github.com/modelcontextprotocol/docs/pull/194",
     repo: "modelcontextprotocol/docs",
-    tags: ["NodeJS", "AI", "documentation"],
+    tags: ["doc"],
     createDate: new Date('2025-03-20')
   },
   {
     id: 0,
     url: "https://github.com/modelcontextprotocol/inspector/pull/207",
     repo: "modelcontextprotocol/inspector",
-    tags: ["React", "AI", "performance"],
+    tags: ["perf"],
     createDate: new Date('2025-03-23')
+  },
+  {
+    id: 0,
+    url: "https://github.com/modelcontextprotocol/inspector/pull/263",
+    repo: "modelcontextprotocol/inspector",
+    tags: ["chore"],
+    createDate: new Date('2025-04-04')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/2",
     repo: "AzureDevOps-MCP",
-    tags: ["AI", "typo"],
+    tags: ["typo"],
     createDate: new Date('2025-03-25')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/3",
     repo: "AzureDevOps-MCP",
-    tags: ["AI", "performance"],
+    tags: ["perf"],
     createDate: new Date('2025-03-25')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/4",
     repo: "AzureDevOps-MCP",
-    tags: ["AI", "package.json"],
+    tags: ["chore"],
     createDate: new Date('2025-03-25')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/5",
     repo: "AzureDevOps-MCP",
-    tags: ["AI", "performance"],
+    tags: ["perf"],
     createDate: new Date('2025-03-25')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/8",
     repo: "AzureDevOps-MCP",
-    tags: ["NodeJS", "AI", "feature"],
+    tags: ["feat"],
     createDate: new Date('2025-03-28')
   },
   {
     id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/9",
     repo: "AzureDevOps-MCP",
-    tags: ["AI", "documentation"],
+    tags: ["doc"],
     createDate: new Date('2025-03-31')
   },
   {
     id: 0,
     url: "https://github.com/cline/cline/pull/2547",
     repo: "cline",
-    tags: ["AI", "package.json"],
+    tags: ["chore"],
     createDate: new Date('2025-03-30')
   },
   {
     id: 0,
     url: "https://github.com/cline/cline/pull/2548",
     repo: "cline",
-    tags: ["AI", "performance"],
+    tags: ["perf"],
     createDate: new Date('2025-03-30')
   },
   {
     id: 0,
     url: "https://github.com/cline/cline/pull/2557",
     repo: "cline",
-    tags: ["AI", "test"],
+    tags: ["test"],
     createDate: new Date('2025-03-31')
   },
-];
-rows.forEach((row, idx) => { row.id = idx });
-
-const chipCss: SxProps = { mr: 0.5 };
-const stringOperators = getGridStringOperators();
-const tagsOperators = stringOperators.filter(operator => operator.value === "contains");
-const columns: Array<GridColDef<Row>> = [
   {
-    field: 'url',
-    width: 300,
-    disableColumnMenu: true,
-    renderCell: (params) => (
-      <Link href={params.value} target="_blank">
-        {params.value.split("https://github.com/")[1]}
-      </Link>
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2602",
+    repo: "cline",
+    tags: ["chore"],
+    createDate: new Date('2025-04-01')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2645",
+    repo: "cline",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-03')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2650",
+    repo: "cline",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-03')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2686",
+    repo: "cline",
+    tags: ["refactor", "perf", "style"],
+    createDate: new Date('2025-04-05')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17426",
+    repo: "dify",
+    tags: ["doc"],
+    createDate: new Date('2025-04-03')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17431",
+    repo: "dify",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-03')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17439",
+    repo: "dify",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-04')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17443",
+    repo: "dify",
+    tags: ["fix"],
+    createDate: new Date('2025-04-04')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17444",
+    repo: "dify",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-04')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17495",
+    repo: "dify",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-06')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17496",
+    repo: "dify",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-06')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17497",
+    repo: "dify",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-06')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17656",
+    repo: "dify",
+    tags: ["refactor", "perf", "chore"],
+    createDate: new Date('2025-04-09')
+  },
+  {
+    id: 0,
+    url: "https://github.com/liam-hq/liam/pull/1166",
+    repo: "liam",
+    tags: ["chore"],
+    createDate: new Date('2025-04-07')
+  },
+  {
+    id: 0,
+    url: "https://github.com/liam-hq/liam/pull/1167",
+    repo: "liam",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-09')
+  },
+  {
+    id: 0,
+    url: "https://github.com/liam-hq/liam/pull/1213",
+    repo: "liam",
+    tags: ["doc"],
+    createDate: new Date('2025-04-07')
+  },
+  {
+    id: 0,
+    url: "https://github.com/liam-hq/liam/pull/1216",
+    repo: "liam",
+    tags: ["chore"],
+    createDate: new Date('2025-04-07')
+  },
+  {
+    id: 0,
+    url: "https://github.com/baptisteArno/typebot.io/pull/2120",
+    repo: "typebot",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-06')
+  }
+];
+dataSource.forEach((item, idx) => { item.id = idx });
+
+const columns: TableProps<Row>['columns'] = [
+  {
+    title: 'url',
+    // width: 250,
+    render: (row: Row) => (
+      <a href={row.url} target="_blank" rel="noreferrer noopener">
+        {row.url.split("https://github.com/")[1]}
+      </a>
     )
   },
   {
-    field: 'createDate',
-    type: 'date',
-    width: 150,
-    disableColumnMenu: true
+    title: 'createDate',
+    // width: 150,
+    render: (row: Row) => (
+      row.createDate.toISOString().slice(0, 10)
+    )
   },
-  // todo-yusheng 想要有 tag 多選的功能
   {
-    field: 'tags',
-    width: 380,
-    sortable: false,
-    hideSortIcons: true,
-    filterOperators: tagsOperators,
-    renderCell: (params) => params.value.map((tag: string) => 
-      <Chip key={tag} label={tag} variant="filled" color="info" sx={chipCss} />
+    title: 'tags',
+    filterMultiple: true,
+    filters: TagList.map(tag => ({
+      text: tag,
+      value: tag
+    })),
+    onFilter: (value, row) => row.tags.includes(value as TagTypes),
+    // width: 180,
+    render: (row: Row) => row.tags.map(tag => 
+      <Tag key={tag} bordered color={TagColorMapping[tag]} className={styles.tag}>{tag}</Tag>
     )
   }
 ];
 
+const pagination: TableProps['pagination'] = { pageSize: 10 }
+
 function App() {
   return (
-    <div className={styles.container}>
-      <DataGrid
-        rows={rows}
+    <main className={styles.container}>
+      <Table
+        dataSource={dataSource}
         columns={columns}
-        disableRowSelectionOnClick
-      ></DataGrid>
-    </div>
+        rowKey="id"
+        pagination={pagination}
+      ></Table>
+    </main>
   )
 }
 

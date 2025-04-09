@@ -1,5 +1,8 @@
 .container {
-    margin: 0 auto;
-    max-width: 900px;
-    background-color: unset;
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: unset;
+}
+.tag {
+  font-size: 14px;
 }
