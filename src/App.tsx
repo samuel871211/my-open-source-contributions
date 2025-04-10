@@ -163,6 +163,13 @@ const dataSource: TableProps<Row>['dataSource'] = [
   },
   {
     id: 0,
+    url: "https://github.com/modelcontextprotocol/inspector/pull/264",
+    repo: "modelcontextprotocol/inspector",
+    tags: ["chore", "refactor"],
+    createDate: new Date('2025-04-04')
+  },
+  {
+    id: 0,
     url: "https://github.com/RyanCardin15/AzureDevOps-MCP/pull/2",
     repo: "AzureDevOps-MCP",
     tags: ["typo"],
