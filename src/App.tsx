@@ -363,8 +363,9 @@ dataSource.forEach((item, idx) => { item.id = idx });
 const columns: TableProps<Row>['columns'] = [
   {
     title: 'url',
+    dataIndex: "url",
     // width: 250,
-    render: (row: Row) => (
+    render: (_value, row, _index) => (
       <a href={row.url} target="_blank" rel="noreferrer noopener">
         {row.url.split("https://github.com/")[1]}
       </a>
@@ -372,13 +373,15 @@ const columns: TableProps<Row>['columns'] = [
   },
   {
     title: 'createDate',
+    dataIndex: "createDate",
     // width: 150,
-    render: (row: Row) => (
+    render: (_value, row, _index) => (
       row.createDate.toISOString().slice(0, 10)
     )
   },
   {
     title: 'tags',
+    dataIndex: 'tags',
     filterMultiple: true,
     filters: TagList.map(tag => ({
       text: tag,
@@ -386,7 +389,7 @@ const columns: TableProps<Row>['columns'] = [
     })),
     onFilter: (value, row) => row.tags.includes(value as TagTypes),
     // width: 180,
-    render: (row: Row) => row.tags.map(tag => 
+    render: (_value, row, _index) => row.tags.map(tag => 
       <Tag key={tag} bordered color={TagColorMapping[tag]} className={styles.tag}>{tag}</Tag>
     )
   }
