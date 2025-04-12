@@ -94,51 +94,58 @@ const dataSource: TableProps<Row>['dataSource'] = [
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/55",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["refactor"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/56",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["doc"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/57",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["doc"],
     createDate: new Date('2025-03-19')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/64",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["refactor", "perf"],
     createDate: new Date('2025-03-24')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/65",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["feat", "style"],
     createDate: new Date('2025-03-24')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/73",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["style"],
     createDate: new Date('2025-03-28')
   },
   {
     id: 0,
     url: "https://github.com/nanobrowser/nanobrowser/pull/77",
-    repo: "E2B/dashboard",
+    repo: "nanobrowser",
     tags: ["style"],
     createDate: new Date('2025-03-30')
+  },
+  {
+    id: 0,
+    url: "https://github.com/nanobrowser/nanobrowser/pull/92",
+    repo: "nanobrowser",
+    tags: ["doc"],
+    createDate: new Date('2025-04-05')
   },
   {
     id: 0,
@@ -254,10 +261,73 @@ const dataSource: TableProps<Row>['dataSource'] = [
   },
   {
     id: 0,
+    url: "https://github.com/cline/cline/pull/2680",
+    repo: "cline",
+    tags: ["chore"],
+    createDate: new Date('2025-04-05')
+  },
+  {
+    id: 0,
     url: "https://github.com/cline/cline/pull/2686",
     repo: "cline",
     tags: ["refactor", "perf", "style"],
     createDate: new Date('2025-04-05')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2802",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2803",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2805",
+    repo: "cline",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2807",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2808",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2810",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2812",
+    repo: "cline",
+    tags: ["chore"],
+    createDate: new Date('2025-04-11')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2816",
+    repo: "cline",
+    tags: ["refactor", "perf"],
+    createDate: new Date('2025-04-11')
   },
   {
     id: 0,
