@@ -331,6 +331,20 @@ const dataSource: TableProps<Row>['dataSource'] = [
   },
   {
     id: 0,
+    url: "https://github.com/cline/cline/pull/2850",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-12')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2851",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-12')
+  },
+  {
+    id: 0,
     url: "https://github.com/langgenius/dify/pull/17426",
     repo: "dify",
     tags: ["doc"],
@@ -383,6 +397,13 @@ const dataSource: TableProps<Row>['dataSource'] = [
     url: "https://github.com/langgenius/dify/pull/17497",
     repo: "dify",
     tags: ["refactor"],
+    createDate: new Date('2025-04-06')
+  },
+  {
+    id: 0,
+    url: "https://github.com/langgenius/dify/pull/17498",
+    repo: "dify",
+    tags: ["refactor", "perf"],
     createDate: new Date('2025-04-06')
   },
   {
