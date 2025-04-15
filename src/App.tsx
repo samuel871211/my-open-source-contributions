@@ -240,6 +240,13 @@ const dataSource: TableProps<Row>['dataSource'] = [
   },
   {
     id: 0,
+    url: "https://github.com/cline/cline/pull/2600",
+    repo: "cline",
+    tags: ["chore"],
+    createDate: new Date('2025-04-01')
+  },
+  {
+    id: 0,
     url: "https://github.com/cline/cline/pull/2602",
     repo: "cline",
     tags: ["chore"],
@@ -264,6 +271,13 @@ const dataSource: TableProps<Row>['dataSource'] = [
     url: "https://github.com/cline/cline/pull/2680",
     repo: "cline",
     tags: ["chore"],
+    createDate: new Date('2025-04-05')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2684",
+    repo: "cline",
+    tags: ["style"],
     createDate: new Date('2025-04-05')
   },
   {
@@ -381,6 +395,20 @@ const dataSource: TableProps<Row>['dataSource'] = [
   {
     id: 0,
     url: "https://github.com/cline/cline/pull/2857",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-12')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2878",
+    repo: "cline",
+    tags: ["refactor"],
+    createDate: new Date('2025-04-12')
+  },
+  {
+    id: 0,
+    url: "https://github.com/cline/cline/pull/2879",
     repo: "cline",
     tags: ["refactor"],
     createDate: new Date('2025-04-12')
