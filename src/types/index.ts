@@ -20,7 +20,8 @@ export type Repo =
     "liam" |
     "typebot" |
     "node" |
-    "DefinitelyTyped";
+    "DefinitelyTyped" |
+    "beyond-xss";
 
 export type TagTypes =
     "doc" |

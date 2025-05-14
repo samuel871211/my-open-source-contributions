@@ -512,6 +512,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         repo: "DefinitelyTyped",
         tags: ["feat"],
         createDate: new Date('2025-05-03')
+    },
+    {
+        id: 0,
+        url: "https://github.com/aszx87410/beyond-xss/pull/8",
+        repo: "beyond-xss",
+        tags: ["doc"],
+        createDate: new Date('2025-05-11')
     }
 ];
 dataSource.forEach((item, idx) => { item.id = idx });
