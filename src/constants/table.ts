@@ -519,6 +519,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         repo: "beyond-xss",
         tags: ["doc"],
         createDate: new Date('2025-05-11')
+    },
+    {
+        id: 0,
+        url: "https://github.com/mdn/content/pull/39556",
+        repo: "mdnContent",
+        tags: ["doc"],
+        createDate: new Date('2025-05-18')
     }
 ];
 dataSource.forEach((item, idx) => { item.id = idx });

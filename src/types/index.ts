@@ -21,7 +21,8 @@ export type Repo =
     "typebot" |
     "node" |
     "DefinitelyTyped" |
-    "beyond-xss";
+    "beyond-xss" |
+    "mdnContent";
 
 export type TagTypes =
     "doc" |
