@@ -510,8 +510,15 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         id: 0,
         url: "https://github.com/DefinitelyTyped/DefinitelyTyped/pull/72673",
         repo: "DefinitelyTyped",
-        tags: ["feat"],
+        tags: ["doc"],
         createDate: new Date('2025-05-03')
+    },
+    {
+        id: 0,
+        url: "https://github.com/DefinitelyTyped/DefinitelyTyped/pull/72754",
+        repo: "DefinitelyTyped",
+        tags: ["doc"],
+        createDate: new Date('2025-05-11')
     },
     {
         id: 0,
@@ -526,6 +533,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         repo: "mdnContent",
         tags: ["doc"],
         createDate: new Date('2025-05-18')
+    },
+    {
+        id: 0,
+        url: "https://github.com/mdn/content/pull/39580",
+        repo: "mdnContent",
+        tags: ["doc"],
+        createDate: new Date('2025-05-20')
     }
 ];
 dataSource.forEach((item, idx) => { item.id = idx });
