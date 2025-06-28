@@ -23,7 +23,8 @@ export type Repo =
     "DefinitelyTyped" |
     "beyond-xss" |
     "mdnContent" |
-    "vscode-html-languageservice";
+    "vscode-html-languageservice" |
+    "ws";
 
 export type TagTypes =
     "doc" |

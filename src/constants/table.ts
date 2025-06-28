@@ -561,6 +561,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         repo: "vscode-html-languageservice",
         tags: ["doc"],
         createDate: new Date('2025-05-21')
+    },
+    {
+        id: 0,
+        url: "https://github.com/websockets/ws/pull/2291",
+        repo: "ws",
+        tags: ["fix"],
+        createDate: new Date('2025-06-28')
     }
 ];
 dataSource.forEach((item, idx) => { item.id = idx });
