@@ -11,6 +11,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
     },
     {
         id: 0,
+        url: "https://github.com/vercel/swr/pull/4110",
+        repo: "SWR",
+        tags: ["perf"],
+        createDate: new Date('2025-03-16')
+    },
+    {
+        id: 0,
         url: "https://github.com/TanStack/query/pull/8669",
         repo: "TanStack Query",
         tags: ["refactor"],
