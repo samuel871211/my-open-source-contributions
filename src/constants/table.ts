@@ -578,6 +578,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
     },
     {
         id: 0,
+        url: "https://github.com/mdn/content/pull/40147",
+        repo: "mdnContent",
+        tags: ["doc"],
+        createDate: new Date('2025-07-01')
+    },
+    {
+        id: 0,
         url: "https://github.com/microsoft/vscode-html-languageservice/pull/209",
         repo: "vscode-html-languageservice",
         tags: ["doc"],
