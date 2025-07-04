@@ -24,7 +24,8 @@ export type Repo =
     "beyond-xss" |
     "mdnContent" |
     "vscode-html-languageservice" |
-    "ws";
+    "ws" |
+    "chromium";
 
 export type TagTypes =
     "doc" |
@@ -35,4 +36,5 @@ export type TagTypes =
     "typo" |
     "style" |
     "chore" |
-    "fix";
+    "fix" |
+    "HTML Spec";

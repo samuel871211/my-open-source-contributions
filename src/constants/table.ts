@@ -585,6 +585,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
     },
     {
         id: 0,
+        url: "https://github.com/mdn/content/pull/40169",
+        repo: "mdnContent",
+        tags: ["doc"],
+        createDate: new Date('2025-07-02')
+    },
+    {
+        id: 0,
         url: "https://github.com/mdn/content/pull/40218",
         repo: "mdnContent",
         tags: ["doc"],
@@ -610,6 +617,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
         repo: "ws",
         tags: ["fix"],
         createDate: new Date('2025-06-28')
+    },
+    {
+        id: 0,
+        url: "https://issues.chromium.org/issues/420520816",
+        repo: "chromium",
+        tags: ["HTML Spec", "fix"],
+        createDate: new Date('2025-05-27')
     }
 ];
 dataSource.forEach((item, idx) => { item.id = idx });
@@ -623,7 +637,8 @@ export const TagColorMapping: { [key in TagTypes]: TagProps['color'] } = {
     "typo": "cyan",
     "style": "purple",
     "chore": "pink",
-    "fix": "red"
+    "fix": "red",
+    "HTML Spec": "blue-inverse"
 };
 
 export const TagList = Object.keys(TagColorMapping) as TagTypes[];
