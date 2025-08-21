@@ -543,6 +543,13 @@ export const dataSource: TableProps<Row>['dataSource'] = [
     },
     {
         id: 0,
+        url: "https://github.com/DefinitelyTyped/DefinitelyTyped/pull/73348",
+        repo: "DefinitelyTyped",
+        tags: ["doc"],
+        createDate: new Date('2025-07-29')
+    },
+    {
+        id: 0,
         url: "https://github.com/aszx87410/beyond-xss/pull/8",
         repo: "beyond-xss",
         tags: ["doc"],
